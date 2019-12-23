@@ -33,11 +33,11 @@ module.exports = {
     })
   ],
   // NEW FOR TONE.JS
-  resolve: {
-    root: __dirname,
-    // for webpack 1:
-    modulesDirectories: ["path/to/Tone.js/"],
-    // for webpack 2:
-    modules: ["path/to/Tone.js/"]
-  }
+  // resolve: {
+  //   root: __dirname,
+  //   // for webpack 1:
+  //   modulesDirectories: ['path/to/Tone.js/'],
+  //   // for webpack 2:
+  //   modules: ['path/to/Tone.js/']
+  // }
 }
