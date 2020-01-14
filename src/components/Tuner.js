@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react'
 // bass
 // change the length of release
 // a stum button of some kind
+// have a button that plays through all of them one at a time
 // metronome (black line in the middle with a circle moving back and forth/another version which is a circle that a ball moves around and at the bottom it hits the tone) (tone changed in Hz)
 // put songs you want to practice too for each tuning (with option for youtube link or spotify link)
 // sign in and have your specific release - songs you put into
@@ -45,21 +46,26 @@ function Tuner() {
 
   return (
     <div className="tuner-wrapper">
-      <div>Tuning: {tuning.name}</div>
-      <div className="tone-buttons">
-        {tuning.notes.map(ele => <button key={ele} onClick={() => synth.triggerAttackRelease(ele, `${release}`)}>{ele}</button>)}
+      <div className="tuner-container-left">
+        <h1>Tuner</h1>
+        <div className="tunings-buttons">
+          {typesOfTunings.map(tuning => <button key={tuning.name} onClick={() => setTuning(tuning)}>{tuning.name}</button>)}
+        </div>
+        <div className="release-input">
+          <p>Tone Release Timing (Seconds):</p>
+          <input onChange={e => setRelease(e.target.value)} value={release} placeholder="Default: 0.1" />
+        </div>
       </div>
-      <div className="tunings-buttons">
-        {typesOfTunings.map(tuning => <button key={tuning.name} onClick={() => setTuning(tuning)}>{tuning.name}</button>)}
+      <div className="tuner-container-right">
+        {/* <div>Tuning: {tuning.name}</div> */}
+        <div className="tone-buttons">
+          {tuning.notes.reverse().map(ele => <button key={ele} onClick={() => synth.triggerAttackRelease(ele, `${release}`)}>{ele}</button>)}
+        </div>
+        <div className="guitar-frets">
+          {tuning.notes.map(ele => <div key={ele} onClick={() => synth.triggerAttackRelease(ele, `${release}`)}></div>)}
+        </div>
       </div>
-      <div>
-        <p>Tone Release Timing (Seconds):</p>
-        <input onChange={e => setRelease(e.target.value)} value={release} placeholder="Default: 0.1" />
-      </div>
-      <div className="guitar-frets">
-        {tuning.notes.map(ele => <div key={ele} onClick={() => synth.triggerAttackRelease(ele, `${release}`)}></div>)}
-      </div>
-      <button onClick={handleStrum}>Strum</button>
+      {/* <button onClick={handleStrum}>Strum</button> */}
     </div>
   )
 }

@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="home-wrapper">
       <Link to='/tuner'>TUNER</Link>
-      METRONOME
+      <Link to='/metronome'>METRONOME</Link>
     </div>
   )
 }

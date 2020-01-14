@@ -7,89 +7,10 @@ body, html {
   margin: 0;
 }
 
-.tuner-wrapper {
-  height: 100vh;
-  width: 100vw;
-  // background: red;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.tone-buttons {
-  width: 40vw;
-  height: 10vh;
-
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.tunings-buttons {
-  width: 55vw;
-  height: 20vh;
-  // border: 1px black solid;
-
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap;
-}
-// .tunings-buttons button {
-//   margin: 5px;
-// }
-
-.guitar-frets {
-  height: 30vh;
-  width: 80vw;
-  // border: 1px black solid;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  // align-items: ;
-  transform: rotate(180deg);
-}
-
-.guitar-frets div {
-  height: 1px;
-  width: 101%;
-  background: black;
-  margin: 5px 0 5px 0;
-  cursor: pointer;
-}
-.guitar-frets div:hover {
-  background: red;
-}
-
-.guitar-frets div:nth-of-type(6) {
-  height: 2px;
-}
-.guitar-frets div:nth-of-type(5) {
-  height: 4px;
-}
-.guitar-frets div:nth-of-type(4) {
-  height: 5px;
-}
-.guitar-frets div:nth-of-type(3) {
-  height: 6px;
-}
-.guitar-frets div:nth-of-type(2) {
-  height: 7px;
-}
-.guitar-frets div:nth-of-type(1) {
-  height: 8px;
-}
+@import './home.scss';
+@import './tuner.scss';
+@import './metronome.scss';
 
 
-// HOME
-.home-wrapper {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
+

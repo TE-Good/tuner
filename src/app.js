@@ -8,6 +8,7 @@ import './style.scss'
 
 import Home from './components/Home'
 import Tuner from './components/Tuner'
+import Metronome from './components/Metronome'
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home}/>
           <Route path="/tuner" component={Tuner}/>
+          <Route path="/metronome" component={Metronome}/>
         </Switch>
       </BrowserRouter>
     </>

@@ -1,0 +1,114 @@
+.tuner-wrapper {
+  height: 100vh;
+  width: 100vw;
+  // background: red;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tuner-container-left {
+  height: 100vw;
+  width: 50vw;
+  border: 2px red dashed;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tuner-container-right {
+  height: 100vw;
+  width: 50vw;
+  border: 2px purple dashed;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tone-buttons {
+  width: 20vw;
+  height: 30vh;
+  border: 1px black solid;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+
+  button {
+    margin: 0;
+    width: 100px;
+    transform: scale(0.6);
+  }
+}
+
+.tunings-buttons {
+  width: 40vw;
+  height: 40vh;
+  border: 1px black solid;
+
+  display: flex;
+  // justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  // transform: rotateY(180deg)
+
+}
+.tunings-buttons button {
+  // height: 40px;
+  width: 200px;
+  transform: scale(0.7)
+
+}
+
+.release-input {
+  border: 1px solid black;
+}
+
+.guitar-frets {
+  height: 30vh;
+  width: 80vw;
+  border: 1px black solid;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  // align-items: ;
+  transform: rotate(180deg);
+}
+
+.guitar-frets div {
+  height: 1px;
+  width: 101%;
+  background: black;
+  margin: 5px 0 5px 0;
+  cursor: pointer;
+}
+.guitar-frets div:hover {
+  background: red;
+}
+
+.guitar-frets div:nth-of-type(6) {
+  height: 2px;
+}
+.guitar-frets div:nth-of-type(5) {
+  height: 4px;
+}
+.guitar-frets div:nth-of-type(4) {
+  height: 5px;
+}
+.guitar-frets div:nth-of-type(3) {
+  height: 6px;
+}
+.guitar-frets div:nth-of-type(2) {
+  height: 7px;
+}
+.guitar-frets div:nth-of-type(1) {
+  height: 8px;
+}
