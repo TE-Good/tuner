@@ -20,9 +20,15 @@ module.exports = {
     contentBase: path.resolve('src'),
     hot: true,
     open: true,
-    port: 8000,
+    port: 4000,
     watchContentBase: true,
-    historyApiFallback: true
+    historyApiFallback: true,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8000',
+        secure: false
+      }
+    }
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),

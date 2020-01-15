@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 
 
 // G-Tool? Practice Tool?
@@ -42,6 +43,12 @@ function Tuner() {
     synth.triggerAttackRelease(tuning.notes[4], 0.5, 4)
     synth.triggerAttackRelease(tuning.notes[5], 0.5, 5)
   }
+
+  useEffect(() => {
+    console.log('mounted')
+    axios.get('api/tuner')
+      .then(tunings => console.log(tunings))
+  })
 
 
   return (
