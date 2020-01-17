@@ -9,6 +9,7 @@ import './style.scss'
 import Home from './components/Home'
 import Tuner from './components/Tuner'
 import Metronome from './components/Metronome'
+import Login from './components/Login'
 
 
 function App() {
@@ -16,11 +17,13 @@ function App() {
     <>
       <BrowserRouter>
         <nav>
-          
+          <Link to='/tuner'>TUNER</Link>
+          <Link to='/login'>Login</Link>
         </nav>
         <Switch>
           <Route exact path="/" component={Home}/>
           <Route path="/tuner" component={Tuner}/>
+          <Route path="/login" component={Login}/>
           <Route path="/metronome" component={Metronome}/>
         </Switch>
       </BrowserRouter>

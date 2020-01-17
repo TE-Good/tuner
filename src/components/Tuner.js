@@ -18,10 +18,11 @@ const synth = new Tone.Synth().toMaster()
 
 function Tuner() {
   const [tuning, setTuning] = useState({ name: 'Standard', notes: ['E2', 'A2', 'D3', 'G3', 'B3', 'E4'] })
+  // const [allTunings, setAllTunings] = useState([])
   const [release, setRelease] = useState(.1)
   Tone.Transport.start()
 
-  const typesOfTunings = [
+  const allTunings = [
     { name: 'Standard', notes: ['E2', 'A2', 'D3', 'G3', 'B3', 'E4'] },
     { name: 'Half-Step Down', notes: ['D#2', 'G#2', 'C#3', 'F#3', 'A#3', 'D#4'] },
     { name: 'Full-Step Down', notes: ['D2', 'G2', 'C3', 'F3', 'A3', 'D4'] },
@@ -35,6 +36,19 @@ function Tuner() {
     { name: 'Open C', notes: ['C2', 'G2', 'C3', 'G3', 'C4', 'E4'] }
   ]
 
+  
+
+  // useEffect(() => {
+  //   getTunings()
+  // }, [allTunings])
+
+  // function getTunings() {
+  //   axios.get('api/tuner')
+  //     .then(tunings => {
+  //       setAllTunings(tunings.data)
+  //     })
+  // }
+
   function handleStrum() {
     synth.triggerAttackRelease(tuning.notes[0], 0.5, 0.1)
     synth.triggerAttackRelease(tuning.notes[1], 0.5, 1)
@@ -44,19 +58,13 @@ function Tuner() {
     synth.triggerAttackRelease(tuning.notes[5], 0.5, 5)
   }
 
-  useEffect(() => {
-    console.log('mounted')
-    axios.get('api/tuner')
-      .then(tunings => console.log(tunings))
-  })
-
 
   return (
     <div className="tuner-wrapper">
       <div className="tuner-container-left">
         <h1>Tuner</h1>
         <div className="tunings-buttons">
-          {typesOfTunings.map(tuning => <button key={tuning.name} onClick={() => setTuning(tuning)}>{tuning.name}</button>)}
+          {allTunings.map(tuning => <button key={tuning.name} onClick={() => setTuning(tuning)}>{tuning.name}</button>)}
         </div>
         <div className="release-input">
           <p>Tone Release Timing (Seconds):</p>
