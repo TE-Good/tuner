@@ -7,6 +7,10 @@ body, html {
   margin: 0;
 }
 
+nav {
+  height: 5vh;
+}
+
 @import './home.scss';
 @import './tuner.scss';
 @import './metronome.scss';

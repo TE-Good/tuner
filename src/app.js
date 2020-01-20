@@ -17,7 +17,9 @@ function App() {
     <>
       <BrowserRouter>
         <nav>
-          <Link to='/tuner'>TUNER</Link>
+          <Link to='/'>Home</Link>
+          <Link to='/tuner'>Tuner</Link>
+          <Link to='/metronome'>Metronome</Link>
           <Link to='/login'>Login</Link>
         </nav>
         <Switch>

@@ -2,13 +2,21 @@ import React, { useState } from 'react'
 
 export default function Metronome() {
 
-  const [bpm, setBpm] = useState(60)
+  const [bpm, setBpm] = useState(120)
+
+  const Tone = require('Tone')
+  const synth = new Tone.Synth().toMaster()
 
   var intervalId = null
 
+  
   const metronome = () => {
+    let count = 0
     intervalId = setInterval(() => {
-      console.log('tick', bpm)
+      // console.log(count % 4)
+      if (count % 4 === 0) synth.triggerAttackRelease('G4', 0.1)
+      else synth.triggerAttackRelease('G3', 0.1)
+      count++
     }, 60000 / bpm)
   }
 

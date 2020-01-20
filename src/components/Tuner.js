@@ -18,7 +18,6 @@ const synth = new Tone.Synth().toMaster()
 
 function Tuner() {
   const [tuning, setTuning] = useState({ name: 'Standard', notes: ['E2', 'A2', 'D3', 'G3', 'B3', 'E4'] })
-  // const [allTunings, setAllTunings] = useState([])
   const [release, setRelease] = useState(.1)
   Tone.Transport.start()
 
@@ -36,51 +35,31 @@ function Tuner() {
     { name: 'Open C', notes: ['C2', 'G2', 'C3', 'G3', 'C4', 'E4'] }
   ]
 
-  
-
-  // useEffect(() => {
-  //   getTunings()
-  // }, [allTunings])
-
-  // function getTunings() {
-  //   axios.get('api/tuner')
-  //     .then(tunings => {
-  //       setAllTunings(tunings.data)
-  //     })
-  // }
-
-  function handleStrum() {
-    synth.triggerAttackRelease(tuning.notes[0], 0.5, 0.1)
-    synth.triggerAttackRelease(tuning.notes[1], 0.5, 1)
-    synth.triggerAttackRelease(tuning.notes[2], 0.5, 2)
-    synth.triggerAttackRelease(tuning.notes[3], 0.5, 3)
-    synth.triggerAttackRelease(tuning.notes[4], 0.5, 4)
-    synth.triggerAttackRelease(tuning.notes[5], 0.5, 5)
-  }
-
-
   return (
-    <div className="tuner-wrapper">
-      <div className="tuner-container-left">
+    <div className="tuner-wrapper-container">
+      <div className="tuner-title">
         <h1>Tuner</h1>
-        <div className="tunings-buttons">
-          {allTunings.map(tuning => <button key={tuning.name} onClick={() => setTuning(tuning)}>{tuning.name}</button>)}
+      </div>
+      <div className="tuner-wrapper">
+        <div className="tuner-container-left">
+          <div className="tunings-buttons">
+            {allTunings.map(tuning => <button key={tuning.name} onClick={() => setTuning(tuning)}>{tuning.name}</button>)}
+          </div>
+          <div className="release-input">
+            <p>Tone Release Timing (Seconds):</p>
+            <input onChange={e => setRelease(e.target.value)} value={release} placeholder="Default: 0.1" />
+          </div>
         </div>
-        <div className="release-input">
-          <p>Tone Release Timing (Seconds):</p>
-          <input onChange={e => setRelease(e.target.value)} value={release} placeholder="Default: 0.1" />
+        <div className="tuner-container-right">
+          <h2>{tuning.name}</h2>
+          <div className="tone-buttons">
+            {tuning.notes.map(ele => <button key={ele} onClick={() => synth.triggerAttackRelease(ele, `${release}`)}>{ele}</button>)}
+          </div>
+          {/* <div className="guitar-frets">
+            {tuning.notes.map(ele => <div key={ele} onClick={() => synth.triggerAttackRelease(ele, `${release}`)}></div>)}
+          </div> */}
         </div>
       </div>
-      <div className="tuner-container-right">
-        {/* <div>Tuning: {tuning.name}</div> */}
-        <div className="tone-buttons">
-          {tuning.notes.reverse().map(ele => <button key={ele} onClick={() => synth.triggerAttackRelease(ele, `${release}`)}>{ele}</button>)}
-        </div>
-        <div className="guitar-frets">
-          {tuning.notes.map(ele => <div key={ele} onClick={() => synth.triggerAttackRelease(ele, `${release}`)}></div>)}
-        </div>
-      </div>
-      {/* <button onClick={handleStrum}>Strum</button> */}
     </div>
   )
 }
