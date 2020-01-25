@@ -14,9 +14,12 @@ nav {
   height: 5vh;
 }
 
+$skele-grey: #555;
+
 @import './home.scss';
 @import './tuner.scss';
 @import './metronome.scss';
+@import './login-register.scss'
 
 
 
