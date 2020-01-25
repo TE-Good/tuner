@@ -14,7 +14,8 @@ nav {
   height: 5vh;
 }
 
-$skele-grey: #555;
+$skele-grey-dark: #555;
+$skele-grey-light: #bbb;
 
 @import './home.scss';
 @import './tuner.scss';
