@@ -13,10 +13,9 @@ function login(req, res) {
   User
     .findOne({ email: req.body.email })
     .then(user => {
-      // NOT USED UNTIL BCRYPT
-      // if (!user || !user.validatePassword(req.body.password)) {
-      //   return res.status(401).json({ message: 'Unauthorized' })
-      // }
+      if (!user || !user.validatePassword(req.body.password)) {
+        return res.status(401).json({ message: 'Unauthorized' })
+      }
       const token = jwt.sign({ sub: user._id }, secret, { expiresIn: '24hr' })
       res.status(202).json({ message: `Hi ${user.username}. Your token is ${token}` })
     })

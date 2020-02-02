@@ -12,6 +12,7 @@ import axios from 'axios'
 // put songs you want to practice too for each tuning (with option for youtube link or spotify link)
 // sign in and have your specific release - songs you put into
 // make a react native version?
+// MAKE DRUMMER METRONOME WITH DRIFTING METRONOME (SET STARTING BPM, HOW LONG IT WILL PLAY, HOW LONG TIL BPM JUMPS UP, AND HOW MUCH IT UPS BY)
 
 const Tone = require('Tone')
 const synth = new Tone.Synth().toMaster()
