@@ -10,10 +10,10 @@ export default function Metronome() {
   const horizontalMetro = React.createRef()
   console.log(horizontalMetro)
 
-  useEffect(() => {
-    console.log('render')
-    // if (horizontalMetro.current) horizontalMetro.current.style.width = '10vw'
-  }, [])
+  // useEffect(() => {
+  //   console.log('render')
+  //   // if (horizontalMetro.current) horizontalMetro.current.style.width = '10vw'
+  // }, [])
 
 
   // horizontalMetro.style.width = '10vw'
@@ -24,7 +24,7 @@ export default function Metronome() {
     // horizontalMetro.current.style.width = '0vw'
     let count = 0
     intervalId = setInterval(() => {
-      console.log(count % 4)
+      // console.log(count % 4)
       if (count % 4 === 0) synth.triggerAttackRelease('G4', 0.1)
       else synth.triggerAttackRelease('G3', 0.1)
       switch (count % 4) {

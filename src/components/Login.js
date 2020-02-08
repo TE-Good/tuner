@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 
 
-export default function Login() {
+export default function Login(props) {
 
   const [form, setForm] = useState({ email: '', password: '' })
 
@@ -13,10 +13,14 @@ export default function Login() {
   function handleSubmit(e) {
     e.preventDefault()
 
-    axios.post('/api/login', form)
-      .then(res => console.log(res))
-      .catch(err => console.log(err))
-      
+    sendData()
+  }
+  
+  async function sendData() {
+    const response = await axios.post('/api/login', form)
+    console.log(response)
+    props.history.push('/')
+
   }
 
   return (
