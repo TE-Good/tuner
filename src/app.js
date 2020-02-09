@@ -2,9 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
 
-import './normalize.css'
-import './skeleton.css'
-import './style.scss'
+import './styles/normalize.css'
+import './styles/skeleton.css'
+import './styles/style.scss'
 
 import Home from './components/Home'
 import Tuner from './components/Tuner'
@@ -12,8 +12,15 @@ import Metronome from './components/Metronome'
 import Login from './components/Login'
 import Register from './components/Register'
 
+import Auth from './lib/auth'
+
 
 function App() {
+
+  function handleLogout() {
+    Auth.logout()
+  }
+
   return (
     <>
       <BrowserRouter>
@@ -23,6 +30,7 @@ function App() {
           <Link to='/metronome'>Metronome</Link>
           <Link to='/login'>Login</Link>
           <Link to='/register'>Register</Link>
+          <Link to="/" onClick={handleLogout}>Logout</Link>
         </nav>
         <Switch>
           <Route exact path="/" component={Home}/>
