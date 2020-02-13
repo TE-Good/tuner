@@ -20,8 +20,8 @@ export default function Login(props) {
   
   async function sendData() {
     const response = await axios.post('/api/login', form)
-    console.log(response)
-    console.log(response.data.token)
+    // console.log(response)
+    // console.log(response.data.token)
     await Auth.setToken(response.data.token)
     props.history.push('/')
 
