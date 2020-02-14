@@ -8,23 +8,16 @@ export default function Login(props) {
 
   const [form, setForm] = useState({ email: '', password: '' })
 
-  function handleChange(e) {
-    setForm({ ...form, [e.target.name]: e.target.value })
+  function handleChange() {
+    setForm({ ...form, [event.target.name]: event.target.value })
   }
 
-  function handleSubmit(e) {
-    e.preventDefault()
+  async function handleSubmit() {
+    event.preventDefault()
 
-    sendData()
-  }
-  
-  async function sendData() {
     const response = await axios.post('/api/login', form)
-    // console.log(response)
-    // console.log(response.data.token)
     await Auth.setToken(response.data.token)
     props.history.push('/')
-
   }
 
   return (

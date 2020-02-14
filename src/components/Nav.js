@@ -17,6 +17,7 @@ function Nav() {
       <Link to='/metronome'>Metronome</Link>
       {!Auth.isAuthenticated() && <Link to='/login'>Login</Link>}
       {!Auth.isAuthenticated() && <Link to='/register'>Register</Link>}
+      {Auth.isAuthenticated() && <Link to="/dashboard">Dashboard</Link>}
       {Auth.isAuthenticated() && <Link to="/" onClick={handleLogout}>Logout</Link>}
     </nav>
   )

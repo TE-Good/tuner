@@ -22,4 +22,11 @@ function login(req, res) {
     .catch(err => res.status(401).json(err))
 }
 
-module.exports = { register, login }
+function profile(req, res) {
+  User
+    .findById(req.currentUser._id)
+    .then(user => res.status(200).json(user))
+    .catch(err => res.json(err))
+}
+
+module.exports = { register, login, profile }

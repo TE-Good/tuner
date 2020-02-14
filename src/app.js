@@ -11,6 +11,7 @@ import Tuner from './components/Tuner'
 import Metronome from './components/Metronome'
 import Login from './components/Login'
 import Register from './components/Register'
+import Dash from './components/Dash'
 import Nav from './components/Nav'
 
 
@@ -21,21 +22,13 @@ function App() {
       <BrowserRouter>
         <main>
           <Nav />
-          {/* <nav>
-            <Link to='/'>Home</Link>
-            <Link to='/tuner'>Tuner</Link>
-            <Link to='/metronome'>Metronome</Link>
-            <Link to='/login'>Login</Link>
-            <Link to='/register'>Register</Link>
-            {Auth.isAuthenticated() && <Link to="/" onClick={handleLogout}>Logout</Link>}
-            {Auth.isAuthenticated() ? <Link to="/" onClick={handleLogout}>Logout</Link> : <Link to='/login'>Login</Link>}
-          </nav> */}
           <Switch>
             <Route exact path="/" component={Home}/>
             <Route path="/tuner" component={Tuner}/>
             <Route path="/login" component={Login}/>
             <Route path="/register" component={Register}/>
             <Route path="/metronome" component={Metronome}/>
+            <Route path="/dashboard" component={Dash}/>
           </Switch>          
         </main>
       </BrowserRouter>
