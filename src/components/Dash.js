@@ -21,9 +21,7 @@ export default function Dash() {
       {data && 
       <>
         <h2>Username: {data.username}</h2>
-      </>
-      
-      }
+      </>}
     </>
     
   )
