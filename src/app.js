@@ -9,9 +9,6 @@ import './styles/style.scss'
 import Home from './components/Home'
 import Tuner from './components/Tuner'
 import Metronome from './components/Metronome'
-import Login from './components/Login'
-import Register from './components/Register'
-import Dash from './components/Dash'
 import Nav from './components/Nav'
 
 
@@ -25,10 +22,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home}/>
             <Route path="/tuner" component={Tuner}/>
-            <Route path="/login" component={Login}/>
-            <Route path="/register" component={Register}/>
             <Route path="/metronome" component={Metronome}/>
-            <Route path="/dashboard" component={Dash}/>
           </Switch>          
         </main>
       </BrowserRouter>
