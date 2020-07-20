@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
+import Carousel from './Carousel'
+
 
 // G-Tool? Practice Tool?
 // ukelele
@@ -38,6 +40,7 @@ function Tuner() {
 
   return (
     <div className="tuner-wrapper-container">
+    {/* <Carousel /> */}
       <div className="tuner-title">
         <h1>Tuner</h1>
       </div>
