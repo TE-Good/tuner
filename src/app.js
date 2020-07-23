@@ -11,7 +11,7 @@ import Home from './components/Home'
 import Tuner from './components/Tuner'
 import Metronome from './components/Metronome'
 import Nav from './components/Nav'
-import Carousel from './components/Carousel'
+import Tunes from './components/Tunes'
 
 
 
@@ -23,7 +23,7 @@ function App() {
           <Nav />
           <Switch>
             <Route path="/metronome" component={Metronome}/>
-            <Route path="/tunes" component={Carousel}/>
+            <Route path="/tunes" component={Tunes}/>
             <Route path="/" component={Tuner}/>
             {/* <Route exact path="/" component={Home}/> */}
           </Switch>          

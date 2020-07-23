@@ -1,0 +1,20 @@
+.tunes-wrapper {
+  height: 95vh;
+  width: 200vw;
+  border: 1px red solid;
+  display: flex;
+
+  scroll-snap-type: y mandatory;
+}
+
+.tune-container {
+  height: 100%;
+  width: 100vw;
+  background: blue;
+  // position: relative;
+
+  scroll-snap-align: start;
+}
+.tune-container:last-of-type {
+  background: green;
+}
