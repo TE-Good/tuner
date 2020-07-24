@@ -3,8 +3,8 @@ import React from 'react'
 function Tunes() {
   return (
     <div class="tunes-wrapper">
-      <section class="tune-container"></section>
-      <section class="tune-container"></section>
+      <div class="tune-container"></div>
+      <div class="tune-container"></div>
     </div>
   )
 }

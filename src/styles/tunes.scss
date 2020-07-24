@@ -1,17 +1,17 @@
 .tunes-wrapper {
   height: 95vh;
-  width: 200vw;
+  width: 100vw;
   border: 1px red solid;
   display: flex;
+  overflow-x: scroll;
 
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: x mandatory;
 }
 
 .tune-container {
   height: 100%;
-  width: 100vw;
+  min-width: 100vw;
   background: blue;
-  // position: relative;
 
   scroll-snap-align: start;
 }
