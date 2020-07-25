@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
 
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './styles/normalize.css'
-import './styles/skeleton.css'
+// import 'bootstrap/dist/css/bootstrap.min.css'
+// import './styles/normalize.css'
+// import './styles/skeleton.css'
 import './styles/style.scss'
 
 import Home from './components/Home'
