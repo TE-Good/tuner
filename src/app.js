@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
 
 // import 'bootstrap/dist/css/bootstrap.min.css'
-// import './styles/normalize.css'
+import './styles/normalize.css'
 // import './styles/skeleton.css'
 import './styles/style.scss'
 

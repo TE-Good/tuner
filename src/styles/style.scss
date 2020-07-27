@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
 body {
   box-sizing: border-box;
 }
@@ -8,6 +10,7 @@ body, html {
   color: #555;
   background: #F9F9F9;
   // background: #E8E8E8;
+  font-family: 'Roboto', sans-serif;
 }
 
 nav {

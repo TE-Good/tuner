@@ -3,11 +3,11 @@ import Button from '@material-ui/core/Button'
 
 const Tone = require('Tone')
 const synth = new Tone.Synth().toMaster()
+Tone.Transport.start()
 
 function Tunes() {
-  const [tuning, setTuning] = useState({ name: 'Standard', notes: ['E2', 'A2', 'D3', 'G3', 'B3', 'E4'] })
+  // const [tuning, setTuning] = useState({ name: 'Standard', notes: ['E2', 'A2', 'D3', 'G3', 'B3', 'E4'] })
   const [release, setRelease] = useState(.1)
-  Tone.Transport.start()
 
   const tunings = [
     { name: 'Standard', notes: ['E2', 'A2', 'D3', 'G3', 'B3', 'E4'] },
@@ -24,14 +24,16 @@ function Tunes() {
     { name: 'Ukelele', notes: ['G4', 'C4', 'E4', 'A4'] }
   ]
 
-
+// make it so that if you scroll left, you return to the end of the list of tunes
+// Maybe have a filler inbetween these that the auto scroll will run past to sleep like it's animating
   return (
     <div className="tunes-wrapper">
-      {/* Maybe have a filler inbetween these that the auto scroll will run past to sleep like it's animating */}
-      {tunings.map((tune, i) => (
-        <div className="tune-container">
-          {tune.name}
-          {tune.notes.map(note => <Button key={i} variant="contained" onClick={() => synth.triggerAttackRelease(note, `${release}`)}>{note}</Button>)}
+      {tunings.map(tune => (
+        <div key={tune.name} className="tune-container">
+          <h3>{tune.name.toUpperCase()}</h3>
+          <div className="tune-buttons">
+            {tune.notes.map(note => <Button key={note} variant="contained" onClick={() => synth.triggerAttackRelease(note, `${release}`)}>{note}</Button>)}
+          </div>
         </div>
       ))}
     </div>
