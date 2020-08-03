@@ -1,7 +1,7 @@
 .tunes-wrapper {
-  height: 95vh;
+  height: 100vh;
+  // height: 95vh;
   width: 100vw;
-  border: 1px red solid;
   display: flex;
   overflow-x: scroll;
 
@@ -19,6 +19,7 @@
   flex-direction: column;
 
   scroll-snap-align: start;
+  border-right: 1vw rgba(0, 0, 0, 0.328) solid;
 }
 
 .tune-buttons {
@@ -31,6 +32,9 @@
   font-size: 700%;
   color: rgba(0, 0, 0, 0.328);
   position: relative;
-  bottom: 5vh;
-  // right: 5vw;
+  bottom: 10vh;
+  // bottom: 5vh;
+  left: 5vw;
+  align-self: flex-start;
+  text-justify: left;
 }

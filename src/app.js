@@ -20,12 +20,12 @@ function App() {
     <>
       <BrowserRouter>
         <main>
-          <Nav />
+          {/* <Nav /> */}
           <Switch>
             <Route path="/metronome" component={Metronome}/>
             <Route path="/tunes" component={Tunes}/>
-            <Route path="/" component={Tuner}/>
-            {/* <Route exact path="/" component={Home}/> */}
+            <Route path="/tuner" component={Tuner}/>
+            <Route exact path="/" component={Home}/>
           </Switch>          
         </main>
       </BrowserRouter>

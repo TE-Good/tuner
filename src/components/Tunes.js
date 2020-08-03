@@ -31,7 +31,9 @@ function Tunes() {
       {tunings.map(tune => (
         <div key={tune.name} className="tune-container">
           <h3>{tune.name.toUpperCase()}</h3>
+          {/* PUT IN NAV ARROWS */}
           <div className="tune-buttons">
+            {/* {tune.notes.map(note => <Button key={note} variant="outlined" onClick={() => synth.triggerAttackRelease(note, `${release}`)}>{note}</Button>)} */}
             {tune.notes.map(note => <Button key={note} variant="contained" onClick={() => synth.triggerAttackRelease(note, `${release}`)}>{note}</Button>)}
           </div>
         </div>
