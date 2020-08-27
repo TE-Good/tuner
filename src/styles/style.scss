@@ -20,8 +20,10 @@ nav {
 $skele-grey-dark: #555;
 $skele-grey-light: #bbb;
 
-$grey-background: rgba(0, 0, 0, 0.65);
+// $grey-background: rgba(0, 0, 0, 0.65);
+$grey-background: rgba(0, 0, 0, 0.85);
 $grey-text: rgba(0, 0, 0, 0.328);
+$white-text: white;
 
 @import './home.scss';
 @import './tuner.scss';

@@ -24,8 +24,6 @@ function Tunes() {
     { name: 'Ukelele', notes: ['G4', 'C4', 'E4', 'A4'] }
   ]
 
-// make it so that if you scroll left, you return to the end of the list of tunes
-// Maybe have a filler inbetween these that the auto scroll will run past to sleep like it's animating
   return (
     <div className="tunes-wrapper">
       {tunings.map(tune => (

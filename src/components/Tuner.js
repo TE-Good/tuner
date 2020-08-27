@@ -1,19 +1,4 @@
-import React, { useState, useEffect } from 'react'
-
-import Carousel from './Tunes'
-
-
-// G-Tool? Practice Tool?
-// ukelele
-// bass
-// change the length of release
-// a stum button of some kind
-// have a button that plays through all of them one at a time
-// metronome (black line in the middle with a circle moving back and forth/another version which is a circle that a ball moves around and at the bottom it hits the tone) (tone changed in Hz)
-// put songs you want to practice too for each tuning (with option for youtube link or spotify link)
-// sign in and have your specific release - songs you put into
-// make a react native version?
-// MAKE DRUMMER METRONOME WITH DRIFTING METRONOME (SET STARTING BPM, HOW LONG IT WILL PLAY, HOW LONG TIL BPM JUMPS UP, AND HOW MUCH IT UPS BY)
+import React, { useState } from 'react'
 
 const Tone = require('Tone')
 const synth = new Tone.Synth().toMaster()
@@ -40,7 +25,6 @@ function Tuner() {
 
   return (
     <div className="tuner-wrapper-container">
-    {/* <Carousel /> */}
       <div className="tuner-title">
         <h1>Tuner</h1>
       </div>
