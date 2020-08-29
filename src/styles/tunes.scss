@@ -10,7 +10,7 @@
 
 .tune-container {
   height: 100%;
-  min-width: 100vw;
+  min-width: 85vw;
   background: $grey-background;
 
   display: flex;
@@ -19,7 +19,30 @@
   flex-direction: column;
 
   scroll-snap-align: start;
-  border-right: 1vw rgba(0, 0, 0, 0.328) solid;
+  // border-right: 1vw rgba(0, 0, 0, 0.328) solid;
+}
+
+.tune-list-container {
+  height: 100%;
+  min-width: 15vw;
+  background: $grey-background;
+  // border: 2px red solid;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-direction: column;
+
+  // justify-content: space-evenly;
+}
+
+.tune-list-container > div {
+  margin-left: 3vw;
+}
+
+.tune-list-container > div:hover {
+  color: $white-text;
+  cursor: pointer;
 }
 
 .tune-buttons {
@@ -39,3 +62,47 @@
   align-self: flex-start;
   text-justify: left;
 }
+
+
+// SWIPING VERSION
+// .tunes-wrapper {
+//   height: 100vh;
+//   // height: 95vh;
+//   width: 100vw;
+//   display: flex;
+//   overflow-x: scroll;
+
+//   scroll-snap-type: x mandatory;
+// }
+
+// .tune-container {
+//   height: 100%;
+//   min-width: 100vw;
+//   background: $grey-background;
+
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+
+//   scroll-snap-align: start;
+//   border-right: 1vw rgba(0, 0, 0, 0.328) solid;
+// }
+
+// .tune-buttons {
+//   display: flex;
+//   justify-content: space-evenly;
+//   width: 80vw;
+// }
+
+// .tune-container > h3 {
+//   font-size: 700%;
+//   // color: rgba(0, 0, 0, 0.328);
+//   color: $white-text;
+//   position: relative;
+//   bottom: 10vh;
+//   // bottom: 5vh;
+//   left: 5vw;
+//   align-self: flex-start;
+//   text-justify: left;
+// }

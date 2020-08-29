@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Button from '@material-ui/core/Button'
 
 const Tone = require('Tone')
@@ -6,7 +6,7 @@ const synth = new Tone.Synth().toMaster()
 Tone.Transport.start()
 
 function Tunes() {
-  // const [tuning, setTuning] = useState({ name: 'Standard', notes: ['E2', 'A2', 'D3', 'G3', 'B3', 'E4'] })
+  const [tuning, setTuning] = useState({ name: 'Standard', notes: ['E2', 'A2', 'D3', 'G3', 'B3', 'E4'] })
   const [release, setRelease] = useState(.1)
 
   const tunings = [
@@ -24,19 +24,37 @@ function Tunes() {
     { name: 'Ukelele', notes: ['G4', 'C4', 'E4', 'A4'] }
   ]
 
+  // useEffect to make check what is selected on the side and make that "selected"
+
   return (
     <div className="tunes-wrapper">
-      {tunings.map(tune => (
-        <div key={tune.name} className="tune-container">
-          <h3>{tune.name.toUpperCase()}</h3>
-          {/* PUT IN NAV ARROWS */}
-          <div className="tune-buttons">
-            {/* {tune.notes.map(note => <Button key={note} variant="outlined" onClick={() => synth.triggerAttackRelease(note, `${release}`)}>{note}</Button>)} */}
-            {tune.notes.map(note => <Button key={note} variant="contained" onClick={() => synth.triggerAttackRelease(note, `${release}`)}>{note}</Button>)}
-          </div>
+      <div className="tune-list-container">
+        {tunings.map(tune => <div key={tune.name}>{tune.name.toUpperCase()}</div>)}
+      </div>
+      <div className="tune-container">
+        <h3>{tuning.name.toUpperCase()}</h3>
+        <div className="tune-buttons">
+          {tuning.notes.map(note => <Button key={note} variant="contained" onClick={() => synth.triggerAttackRelease(note, `${release}`)}>{note}</Button>)}
         </div>
-      ))}
+      </div>
     </div>
   )
 }
 export default Tunes
+
+
+// SWIPING VERSION 
+// return (
+//   <div className="tunes-wrapper">
+//     {tunings.map(tune => (
+//       <div key={tune.name} className="tune-container">
+//         <h3>{tune.name.toUpperCase()}</h3>
+//         {/* PUT IN NAV ARROWS */}
+//         <div className="tune-buttons">
+//           {/* {tune.notes.map(note => <Button key={note} variant="outlined" onClick={() => synth.triggerAttackRelease(note, `${release}`)}>{note}</Button>)} */}
+//           {tune.notes.map(note => <Button key={note} variant="contained" onClick={() => synth.triggerAttackRelease(note, `${release}`)}>{note}</Button>)}
+//         </div>
+//       </div>
+//     ))}
+//   </div>
+// )
