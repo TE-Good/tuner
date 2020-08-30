@@ -24,17 +24,29 @@ function Tunes() {
     { name: 'Ukelele', notes: ['G4', 'C4', 'E4', 'A4'] }
   ]
 
-  // useEffect to make check what is selected on the side and make that "selected"
+  function navToTuning(e, tune) {
+    const nextTuning = tunings.find(tuning => tuning.name == tune.name)
+    setTuning(nextTuning)
+  }
 
   return (
     <div className="tunes-wrapper">
       <div className="tune-list-container">
-        {tunings.map(tune => <div key={tune.name}>{tune.name.toUpperCase()}</div>)}
+        {tunings.map(tune => (
+          <div
+            key={tune.name}
+            className={`${tune.name == tuning.name ? "tune-list-item-white" : ""}`}
+            onClick={(e) => navToTuning(e, tune)}>
+            {tune.name.toUpperCase()}
+          </div>
+        ))}
       </div>
       <div className="tune-container">
         <h3>{tuning.name.toUpperCase()}</h3>
         <div className="tune-buttons">
-          {tuning.notes.map(note => <Button key={note} variant="contained" onClick={() => synth.triggerAttackRelease(note, `${release}`)}>{note}</Button>)}
+          {tuning.notes.map(note => (
+            <Button key={note} variant="contained" onClick={() => synth.triggerAttackRelease(note, `${release}`)}>{note}</Button>
+          ))}
         </div>
       </div>
     </div>
